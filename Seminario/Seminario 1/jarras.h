@@ -6,6 +6,7 @@
 #define vaciar4 4
 #define pasar3a4 5
 #define pasar4a3 6
+#define vaciar
 
 typedef struct
 {

@@ -1,0 +1,1 @@
+ego=(tNodo *) minimax(juego,jugador);

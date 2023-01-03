@@ -1,0 +1,1 @@
+(LISTA ) malloc(sizeof(LISTA)+size)

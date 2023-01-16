@@ -1,0 +1,22 @@
+Lista expandir(tElemento *nodo)
+{
+    unsigned op;
+    Lista sucesores=CrearLista(MAXI);
+    for (op=1;op<=NUM_OPERADORES;op++) 
+    {
+        if(esValido(op,nodo->estado))
+        {
+            tEstado* nuevos = (tEstado*) malloc (sizeof(tEstado));
+            tNodo* NodoNuevos = (tNodo*) malloc (sizeof(tNodo));
+            nuevos = aplicaOperador(op,nodo->estado);
+            NodoNuevos->padre = nodo;
+            NodoNuevos->operador = op;
+            NodoNuevos->estado = nuevos;
+            NodoNuevos->costeCamino = nodo->costeCamino + coste(op,nodo->estado);
+            NodoNuevos->profundidad = nodo->profundidad + 1;
+
+            InsertarUltimo(sucesores,nuevos)
+        }
+    }
+    return sucesores;
+} 
